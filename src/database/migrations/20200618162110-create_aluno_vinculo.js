@@ -17,9 +17,9 @@ module.exports = {
         allowNull: false,
       },
       id_curso: {
-        type: Sequelize.STRING(8),
+        type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'Curso', key: 'codigo_curso' },
+        references: { model: 'Curso', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },

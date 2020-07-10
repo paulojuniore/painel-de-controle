@@ -3,9 +3,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Curso', { 
-      codigo_curso: {
-        type: Sequelize.STRING(8),
+      id: {
+        type: Sequelize.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
         allowNull: false,
       },
       nome_curso: {
