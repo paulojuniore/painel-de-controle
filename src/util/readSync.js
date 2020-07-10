@@ -41,6 +41,33 @@ const buildMunicipios = (municipios) => {
   return dados;
 }
 
+// Função responsável por preparar os dados de alunos para inserção no banco de dados.
+const buildAlunos = (alunos) => {
+  const dados = [];
+  for (let i = 0; i < alunos.length; i++) {
+    const tokens_aluno = alunos[i].split(';');
+    dados.push({
+      cpf: tokens_aluno[0],
+      id_situacao: Number(tokens_aluno[1]),
+      semestre_situacao: tokens_aluno[2],
+      id_ingresso: Number(tokens_aluno[3]),
+      semestre_ingresso: tokens_aluno[4],
+      ano_nascimento: Number(tokens_aluno[5]),
+      id_cota: Number(tokens_aluno[6]),
+      id_tipo_escola: Number(tokens_aluno[7]),
+      ano_conclusao_ensino_medio: Number(tokens_aluno[8]),
+      email: tokens_aluno[9],
+      id_genero: Number(tokens_aluno[10]),
+      id_estado_civil: Number(tokens_aluno[11]),
+      id_nacionalidade: Number(tokens_aluno[12]),
+      id_pais_origem: Number(tokens_aluno[13]),
+      id_naturalidade: Number(tokens_aluno[14]),
+      id_raca: Number(tokens_aluno[15])
+    });
+  }
+  return dados;
+}
+
 // Função responsável por preparar os dados de munícipios para inserção no banco de dados.
 const buildAlunoVinculos = (aluno_vinculos) => {
   const dados = [];
@@ -61,5 +88,6 @@ module.exports = {
   readFile,
   buildCursos,
   buildMunicipios,
+  buildAlunos,
   buildAlunoVinculos,
 }
