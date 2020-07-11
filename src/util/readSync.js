@@ -97,12 +97,11 @@ const buildAlunoVinculos = (aluno_vinculos) => {
   return dados;
 }
 
-console.log(buildAlunoDeficiencias(readFile('../../data/aluno_deficiencias.csv')));
-
 module.exports = { 
   readFile,
   buildCursos,
   buildMunicipios,
   buildAlunos,
+  buildAlunoDeficiencias,
   buildAlunoVinculos,
 }
