@@ -68,6 +68,19 @@ const buildAlunos = (alunos) => {
   return dados;
 }
 
+// Função responsável por preparar os dados do relacionamento entre aluno e deficiências para inserção no banco de dados.
+const buildAlunoDeficiencias = (aluno_deficiencias) => {
+  const dados = [];
+  for (let i = 0; i < aluno_deficiencias.length; i++) {
+    const tokens_aluno = aluno_deficiencias[i].split(';');
+    dados.push({
+      cpf_aluno: tokens_aluno[0],
+      codigo_deficiencia: tokens_aluno[1],
+    });
+  }
+  return dados;
+}
+
 // Função responsável por preparar os dados de munícipios para inserção no banco de dados.
 const buildAlunoVinculos = (aluno_vinculos) => {
   const dados = [];
@@ -83,6 +96,8 @@ const buildAlunoVinculos = (aluno_vinculos) => {
   }
   return dados;
 }
+
+console.log(buildAlunoDeficiencias(readFile('../../data/aluno_deficiencias.csv')));
 
 module.exports = { 
   readFile,

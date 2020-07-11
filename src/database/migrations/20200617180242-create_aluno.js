@@ -53,8 +53,8 @@ module.exports = {
         allowNull: false,
       },
       email: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.STRING(50),
+        allowNull: true,
       },
       id_genero: {
         type: Sequelize.INTEGER,
